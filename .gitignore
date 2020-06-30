@@ -1,0 +1,7 @@
+/auto-save-list/
+/backup/
+/elpa/
+/eshell/
+/transient/
+/config.el
+*.elc
