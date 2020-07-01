@@ -3,5 +3,7 @@
 /elpa/
 /eshell/
 /transient/
+/.*
 /config.el
+/tramp
 *.elc
