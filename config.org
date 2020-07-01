@@ -95,6 +95,12 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 #+end_src
 
+** Disable auto save ~#filename#~
+
+#+begin_src elisp :tangle yes
+(setq auto-save-default nil)
+#+end_src
+
 ** Set darker background for selection
 
 #+begin_src elisp :tangle yes
