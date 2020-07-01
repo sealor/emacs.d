@@ -108,3 +108,7 @@ Buffers hold the content from files which are displayed within windows.
 - [ ] pdftools?
 - [ ] agenda view in org-mode?
 - [ ] INFO: Shift for selection does not work in org-mode
+
+* Links
+
+- [[https://emacscast.org/][EmacsCast]]
