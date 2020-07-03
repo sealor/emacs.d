@@ -88,6 +88,8 @@ Buffers hold the content from files which are displayed within windows.
 | C-c C-c | execute  (e.g. table formatting or babel code) |
 | C-c C-e | export document                                |
 | TAB     | fold and unfold content of headings            |
+| C-c C-l | edit link text and location                    |
+| C-c C-o | open link at point                             |
 
 ** Helm
 | M-x           | helm-M-x        | helm elisp prompt (non-default)                  |
