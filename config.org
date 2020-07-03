@@ -96,9 +96,16 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 #+end_src
 
 ** Disable auto save ~#filename#~
+- [[http://ergoemacs.org/emacs/emacs_auto_save.html]]
 
 #+begin_src elisp :tangle yes
 (setq auto-save-default nil)
+#+end_src
+
+** Disable lock files ~.#filename~
+
+#+begin_src elisp :tangle yes
+(setq create-lockfiles nil)
 #+end_src
 
 ** Set darker background for selection
