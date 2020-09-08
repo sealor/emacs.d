@@ -1,9 +1,5 @@
-/auto-save-list/
-/backup/
-/elpa/
-/eshell/
-/transient/
-/.*
-/config.el
-/tramp
-*.elc
+*
+!.gitignore
+!README.org
+!config.org
+!init.el
