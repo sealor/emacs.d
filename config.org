@@ -113,3 +113,10 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 #+begin_src elisp :tangle yes
 (set-face-background 'region "gainsboro")
 #+end_src
+
+** Disable auth saving
+- https://www.gnu.org/software/emacs/manual/html_node/emacs/Authentication.html
+
+#+begin_src elisp :tangle yes
+(setq auth-source-save-behavior nil)
+#+end_src
