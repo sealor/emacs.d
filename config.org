@@ -76,6 +76,8 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 #+end_src
 
 * Ivy (Counsel)
+- https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/
+- http://oremacs.com/swiper/
 
 ** Run basic Ivy preparation
 
@@ -92,6 +94,7 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 #+end_src
 
 * Projectile
+- https://docs.projectile.mx
 
 #+begin_src elisp :tangle yes
 (counsel-projectile-mode 1)
@@ -102,6 +105,7 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 : projectile-command-map
 
 * Which Key Help
+- http://wikemacs.org/wiki/Discoverability#Which-key_.28and_guide-key.29
 
 #+begin_src elisp :tangle yes
 (which-key-mode)
