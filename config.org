@@ -27,7 +27,7 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 ** Set installed packages
 
 #+begin_src elisp :tangle yes
-(setq package-selected-packages '(cider evil magit org helm))
+(setq package-selected-packages '(cider evil magit org helm which-key))
 #+end_src
 
 
@@ -90,6 +90,13 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (global-set-key (kbd "M-x") #'helm-M-x)
 
 (helm-mode 1)
+#+end_src
+
+
+* Which Key Help
+
+#+begin_src elisp :tangle yes
+(which-key-mode)
 #+end_src
 
 
