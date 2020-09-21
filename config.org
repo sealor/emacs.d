@@ -26,7 +26,7 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 ** Set installed packages
 
 #+begin_src elisp :tangle yes
-(setq package-selected-packages '(cider evil magit org projectile counsel counsel-projectile which-key))
+(setq package-selected-packages '(tramp cider evil magit org projectile counsel counsel-projectile which-key))
 #+end_src
 
 * Evil-Mode
