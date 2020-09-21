@@ -18,11 +18,10 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 
 * Package Management
 
-** Add Melpa repos
+** Add Melpa repo
 
 #+begin_src elisp :tangle yes
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 #+end_src
 
 ** Set installed packages
