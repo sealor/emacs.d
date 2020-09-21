@@ -15,7 +15,6 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 #+end_src
 
-
 * Package Management
 
 ** Add Melpa repo
@@ -30,13 +29,11 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (setq package-selected-packages '(cider evil magit org helm which-key))
 #+end_src
 
-
 * Evil-Mode
 
 #+begin_src elisp :tangle yes
 (evil-mode)
 #+end_src
-
 
 * Org-Mode
 
@@ -64,7 +61,6 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (setq org-support-shift-select t)
 #+end_src
 
-
 * Magit
 
 ** Set Magit key binding to C-x g
@@ -79,7 +75,6 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (put 'magit-clean 'disabled nil)
 #+end_src
 
-
 * Helm
 
 ** Run basic Helm preparation
@@ -92,13 +87,11 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (helm-mode 1)
 #+end_src
 
-
 * Which Key Help
 
 #+begin_src elisp :tangle yes
 (which-key-mode)
 #+end_src
-
 
 * Configure settings for editting
 
