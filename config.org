@@ -26,7 +26,7 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 ** Set installed packages
 
 #+begin_src elisp :tangle yes
-(setq package-selected-packages '(cider evil magit org helm which-key))
+(setq package-selected-packages '(cider evil magit org counsel which-key))
 #+end_src
 
 * Evil-Mode
@@ -75,16 +75,20 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (put 'magit-clean 'disabled nil)
 #+end_src
 
-* Helm
+* Ivy (Counsel)
 
-** Run basic Helm preparation
+** Run basic Ivy preparation
 
 #+begin_src elisp :tangle yes
-(require 'helm-config)
+(require 'ivy)
 
-(global-set-key (kbd "M-x") #'helm-M-x)
+(global-set-key (kbd "C-s") 'swiper-isearch)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "M-y") 'counsel-yank-pop)
+(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
-(helm-mode 1)
+(ivy-mode 1)
 #+end_src
 
 * Which Key Help
