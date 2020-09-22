@@ -138,6 +138,12 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (set-face-background 'region "gainsboro")
 #+end_src
 
+** Decrease global font size
+
+#+begin_src elisp :tangle yes
+(set-face-attribute 'default (selected-frame) :height 120)
+#+end_src
+
 ** Disable auth saving
 - https://www.gnu.org/software/emacs/manual/html_node/emacs/Authentication.html
 
