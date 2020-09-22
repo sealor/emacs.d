@@ -144,6 +144,12 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (set-face-attribute 'default (selected-frame) :height 120)
 #+end_src
 
+** Activate vertical window divider
+
+#+begin_src elisp :tangle yes
+(window-divider-mode 1)
+#+end_src
+
 ** Disable auth saving
 - https://www.gnu.org/software/emacs/manual/html_node/emacs/Authentication.html
 
