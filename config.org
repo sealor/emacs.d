@@ -16,17 +16,25 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 #+end_src
 
 * Package Management
-
 ** Add Melpa repo
 
 #+begin_src elisp :tangle yes
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 #+end_src
 
-** Set installed packages
+** Set selected packages
 
 #+begin_src elisp :tangle yes
 (setq package-selected-packages '(tramp cider evil magit org projectile counsel counsel-projectile which-key))
+#+end_src
+
+** Install packages if needed
+
+#+begin_src elisp :tangle yes
+(setq url-user-agent "curl/7.58.0")
+(unless package-archive-contents
+  (package-refresh-contents))
+(package-install-selected-packages)
 #+end_src
 
 * Evil-Mode
