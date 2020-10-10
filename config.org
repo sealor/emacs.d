@@ -98,6 +98,8 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (global-set-key (kbd "M-y") 'counsel-yank-pop)
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
+(define-key shell-mode-map (kbd "C-r") 'counsel-shell-history)
+
 (ivy-mode 1)
 #+end_src
 
