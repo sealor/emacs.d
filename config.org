@@ -1,5 +1,6 @@
 #+TITLE: Configuration
 #+AUTHOR: Stefan Richter
+#+STARTUP: overview
 
 Usage:
 #+begin_src shell
