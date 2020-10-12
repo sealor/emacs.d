@@ -27,7 +27,7 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 
 #+begin_src elisp :tangle yes
   (setq package-selected-packages '(
-    amx evil cider counsel counsel-projectile
+    amx bash-completion evil cider counsel counsel-projectile
     magit org projectile tramp which-key))
 #+end_src
 
@@ -40,6 +40,10 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (package-install-selected-packages)
 #+end_src
 
+* Bash-Completion
+#+begin_src elisp :tangle yes
+(bash-completion-setup)
+#+end_src
 * Evil-Mode
 
 #+begin_src elisp :tangle yes
