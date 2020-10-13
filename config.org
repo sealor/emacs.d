@@ -28,7 +28,7 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 #+begin_src elisp :tangle yes
   (setq package-selected-packages '(
     amx bash-completion evil cider counsel counsel-projectile
-    magit org projectile tramp which-key))
+    magit org projectile tramp which-key xterm-color))
 #+end_src
 
 ** Install packages if needed
@@ -121,6 +121,21 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 #+begin_src elisp :tangle yes
 (which-key-mode 1)
 #+end_src
+
+* xterm-color
+#+BEGIN_SRC elisp :tangle yes
+(setq comint-output-filter-functions
+  (remove 'ansi-color-process-output comint-output-filter-functions))
+
+(add-hook 'shell-mode-hook
+  (lambda ()
+    ;; Disable font-locking in this buffer to improve performance
+    (font-lock-mode -1)
+    ;; Prevent font-locking from being re-enabled in this buffer
+    (make-local-variable 'font-lock-function)
+    (setq font-lock-function (lambda (_) nil))
+    (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter nil t)))
+#+END_SRC
 
 * Configure settings for editting
 
