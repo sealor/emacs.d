@@ -60,6 +60,7 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
  'org-babel-load-languages
  '(
    (clojure . t)
+   (shell . t)
   )
 )
 #+end_src
