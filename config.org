@@ -116,6 +116,10 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 #+RESULTS:
 : projectile-command-map
 
+* Tramp
+#+begin_src elisp :tangle yes
+(setq tramp-histfile-override "/tmp/.tramp_history")
+#+end_src
 * Which Key Help
 - http://wikemacs.org/wiki/Discoverability#Which-key_.28and_guide-key.29
 
