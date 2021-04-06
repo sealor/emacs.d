@@ -98,10 +98,9 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 ** Run basic Ivy preparation
 
 #+begin_src elisp :tangle yes
-(counsel-mode 1)
+(ivy-mode 1)
 
 (global-set-key (kbd "C-s") 'swiper-isearch)
-(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 (define-key shell-mode-map (kbd "C-r") 'counsel-shell-history)
 #+end_src
 
