@@ -16,6 +16,12 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 #+end_src
 
+* Configure bash as default shell
+
+#+begin_src elisp :tangle yes
+(setq explicit-shell-file-name "/bin/bash")
+#+end_src
+
 * Package Management
 ** Add Melpa repo
 
