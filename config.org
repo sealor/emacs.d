@@ -4,29 +4,29 @@
 
 Usage:
 #+begin_src shell
-mv ~/.emacs.d ~/.emacs.d-bak
-mv ~/.emacs ~/.emacs-bak
-git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
+  mv ~/.emacs.d ~/.emacs.d-bak
+  mv ~/.emacs ~/.emacs-bak
+  git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 #+end_src
 
 * Switch to fullscreen mode on start-up
 - https://emacs.stackexchange.com/questions/2999/how-to-maximize-my-emacs-frame-on-start-up
 
 #+begin_src elisp :tangle yes
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+  (add-to-list 'default-frame-alist '(fullscreen . maximized))
 #+end_src
 
 * Configure bash as default shell
 
 #+begin_src elisp :tangle yes
-(setq explicit-shell-file-name "/bin/bash")
+  (setq explicit-shell-file-name "/bin/bash")
 #+end_src
 
 * Package Management
 ** Add Melpa repo
 
 #+begin_src elisp :tangle yes
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+  (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 #+end_src
 
 ** Set selected packages
@@ -40,108 +40,106 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
 ** Install packages if needed
 
 #+begin_src elisp :tangle yes
-(setq url-user-agent "curl/7.58.0")
-(unless package-archive-contents
-  (package-refresh-contents))
-(package-install-selected-packages)
+  (setq url-user-agent "curl/7.58.0")
+  (unless package-archive-contents
+    (package-refresh-contents))
+  (package-install-selected-packages)
 #+end_src
 
 * Recent files
 
 #+begin_src elisp :tangle yes
-(recentf-mode 1)
+  (recentf-mode 1)
 #+end_src
 
 * Bash-Completion
+
 #+begin_src elisp :tangle yes
-(bash-completion-setup)
+  (bash-completion-setup)
 #+end_src
+
 * Evil-Mode
 
 #+begin_src elisp :tangle yes
-(evil-mode 1)
+  (evil-mode 1)
 #+end_src
 
 * Org-Mode
-
 ** Enable languages for org-mode additionally to elisp
 - https://orgmode.org/manual/Languages.html
 
 #+begin_src elisp :tangle yes
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '(
-   (clojure . t)
-   (shell . t)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '(
+     (clojure . t)
+     (shell . t)
+    )
   )
-)
 #+end_src
 
 ** Set ~cider~ as ~org-babel-clojure-backend~
 
 #+begin_src elisp :tangle yes
-(setq org-babel-clojure-backend 'cider)
+  (setq org-babel-clojure-backend 'cider)
 #+end_src
 
 ** Enable Shift selection
 
 #+begin_src elisp :tangle yes
-(setq org-support-shift-select t)
+  (setq org-support-shift-select t)
 #+end_src
 
 * Magit
-
 ** Set Magit key binding to C-x g
 
 #+begin_src elisp :tangle yes
-(global-set-key (kbd "C-x g") 'magit-status)
+  (global-set-key (kbd "C-x g") 'magit-status)
 #+end_src
 
 ** Disable confirmation for git clean
 
 #+begin_src elisp :tangle yes
-(put 'magit-clean 'disabled nil)
+  (put 'magit-clean 'disabled nil)
 #+end_src
 
-* Ivy (Counsel)
+* Prepare Ivy (Counsel)
 - https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/
 - http://oremacs.com/swiper/
 
-** Run basic Ivy preparation
-
 #+begin_src elisp :tangle yes
-(ivy-mode 1)
-(counsel-mode 1)
+  (ivy-mode 1)
+  (counsel-mode 1)
 
-(global-set-key (kbd "C-s") 'swiper-isearch)
-(define-key shell-mode-map (kbd "C-s") 'swiper-isearch-backward)
-(define-key shell-mode-map (kbd "C-r") 'counsel-shell-history)
+  (global-set-key (kbd "C-s") 'swiper-isearch)
+  (define-key shell-mode-map (kbd "C-s") 'swiper-isearch-backward)
+  (define-key shell-mode-map (kbd "C-r") 'counsel-shell-history)
 #+end_src
 
 * Projectile
 - https://docs.projectile.mx
 
 #+begin_src elisp :tangle yes
-(counsel-projectile-mode 1)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (counsel-projectile-mode 1)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 #+end_src
-
-#+RESULTS:
-: projectile-command-map
 
 * Tramp
+
 #+begin_src elisp :tangle yes
-(setq tramp-histfile-override "/tmp/.tramp_history")
+  (setq tramp-histfile-override "/tmp/.tramp_history")
 #+end_src
+
 * Which Key Help
 - http://wikemacs.org/wiki/Discoverability#Which-key_.28and_guide-key.29
 
 #+begin_src elisp :tangle yes
-(which-key-mode 1)
+  (which-key-mode 1)
 #+end_src
 
 * xterm-color
-#+BEGIN_SRC elisp :tangle yes
+
+#+begin_src elisp :tangle yes
 (setq comint-output-filter-functions
   (remove 'ansi-color-process-output comint-output-filter-functions))
 
@@ -153,50 +151,49 @@ git clone https://github.com/sealor/emacs.d.git ~/.emacs.d
     (make-local-variable 'font-lock-function)
     (setq font-lock-function (lambda (_) nil))
     (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter nil t)))
-#+END_SRC
+#+end_src
 
 * Configure settings for editting
-
 ** Set backup directory
 
 #+begin_src elisp :tangle yes
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+  (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 #+end_src
 
 ** Disable auto save ~#filename#~
 - [[http://ergoemacs.org/emacs/emacs_auto_save.html]]
 
 #+begin_src elisp :tangle yes
-(setq auto-save-default nil)
+  (setq auto-save-default nil)
 #+end_src
 
 ** Disable lock files ~.#filename~
 
 #+begin_src elisp :tangle yes
-(setq create-lockfiles nil)
+  (setq create-lockfiles nil)
 #+end_src
 
 ** Set darker background for selection
 
 #+begin_src elisp :tangle yes
-(set-face-background 'region "gainsboro")
+  (set-face-background 'region "gainsboro")
 #+end_src
 
 ** Decrease global font size
 
 #+begin_src elisp :tangle yes
-(set-face-attribute 'default (selected-frame) :height 120)
+  (set-face-attribute 'default (selected-frame) :height 120)
 #+end_src
 
 ** Activate vertical window divider
 
 #+begin_src elisp :tangle yes
-(window-divider-mode 1)
+  (window-divider-mode 1)
 #+end_src
 
 ** Disable auth saving
 - https://www.gnu.org/software/emacs/manual/html_node/emacs/Authentication.html
 
 #+begin_src elisp :tangle yes
-(setq auth-source-save-behavior nil)
+  (setq auth-source-save-behavior nil)
 #+end_src
