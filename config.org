@@ -205,3 +205,10 @@ Usage:
 #+begin_src elisp :tangle yes
   (setq auth-source-save-behavior nil)
 #+end_src
+
+** Disable Beeping
+- http://www.gnu.org/software/emacs/manual/html_node/elisp/Beeping.html
+
+#+begin_src elisp :tangle yes
+  (setq ring-bell-function 'ignore)
+#+end_src
